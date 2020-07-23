@@ -18,7 +18,7 @@ function setGradient(c1, c2) {
 }
 
 // call function on startup
-setGradient();
+setGradient(color1.value, color2.value);
 
 //create random rgb number
 function random_rgb() {
@@ -37,8 +37,6 @@ button.addEventListener("click", function(){
 // add event listeners to inputs
 color1.addEventListener("input", function(){
 	setGradient(color1.value, color2.value);
-
-
 });
 color2.addEventListener("input", function(){
 	setGradient(color1.value, color2.value)
