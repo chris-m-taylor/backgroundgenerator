@@ -17,7 +17,6 @@ function setGradient(c1, c2) {
 //update input color when the background is changed
 function setInputColor(c1, c2){
 	color1.value = c1;
-	console.log(color1.value);
 	color2.value = c2;
 }
 
