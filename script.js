@@ -2,7 +2,18 @@ var css = document.querySelector("h3");
 var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
-var button = document.getElementById("random")
+var button = document.getElementById("random");
+const colorArray = [];
+
+//Grab and store colors in a global array
+const storeColors = (color1, color2) => {
+
+	let array = [color1, color2];
+
+	colorArray.push(array);
+	console.log(colorArray);
+
+}
 
 // function to change background color given 2 rbg or hex values
 function setGradient(c1, c2) {
@@ -13,6 +24,7 @@ function setGradient(c1, c2) {
 	+ c2
 	+ ")";
 	css.textContent = body.style.background + ";";
+	storeColors(color1.value, color2.value);// store colors since colors were updated
 }
 //update input color when the background is changed
 function setInputColor(c1, c2){
@@ -22,6 +34,8 @@ function setInputColor(c1, c2){
 
 // call function on startup
 setGradient(color1.value, color2.value);
+// Get rid of initial value in array
+colorArray.pop();
 
 //create random rgb number
 function random_rgb() {
@@ -61,7 +75,10 @@ button.addEventListener("click", function(){
 // add event listeners to inputs
 color1.addEventListener("input", function(){
 	setGradient(color1.value, color2.value);
+
 });
 color2.addEventListener("input", function(){
-	setGradient(color1.value, color2.value)
+	setGradient(color1.value, color2.value);
+
 });
+
